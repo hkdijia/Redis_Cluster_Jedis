@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gotkx</groupId>
-	<artifactId>jedis-demo</artifactId>
+	<artifactId>redisson-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jedis-demo</name>
+	<name>redisson-demo</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -30,14 +30,18 @@
 			<scope>test</scope>
 		</dependency>
 
+
 		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			<version>3.3.0</version>
-			<type>jar</type>
-			<scope>compile</scope>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson</artifactId>
+			<version>3.13.6</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.12</version>
+		</dependency>
 
 	</dependencies>
 
