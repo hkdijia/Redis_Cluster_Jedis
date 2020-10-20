@@ -12,7 +12,7 @@ import java.util.Set;
  */
 public class ClusterJedis {
 
-    public static String HOST = "192.168.50.21";
+    public static String HOST = "10.254.13.20";
     public static int PORT = 6379;
 
     public static void main(String[] args) {

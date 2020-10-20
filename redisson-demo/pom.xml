@@ -36,12 +36,17 @@
 			<artifactId>redisson</artifactId>
 			<version>3.13.6</version>
 		</dependency>
-
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
-			<version>1.7.12</version>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.12</version>
 		</dependency>
+
+		<!--		<dependency>-->
+<!--			<groupId>org.slf4j</groupId>-->
+<!--			<artifactId>slf4j-simple</artifactId>-->
+<!--			<version>1.7.12</version>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
