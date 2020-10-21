@@ -5,11 +5,12 @@ import org.redisson.api.RList;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 
-import org.apache.log4j.Logger;
-
+/**
+ * 使用 RList 操作 Redis 列表
+ * @author HuangKai
+ */
 public class ListExamples {
 
-    static Logger log = Logger.getLogger(ListExamples.class.getName());
     private static final String  NODEADDRESS_M1 = "redis://10.254.13.20:6379";
 
     public static void main(String[] args) {
