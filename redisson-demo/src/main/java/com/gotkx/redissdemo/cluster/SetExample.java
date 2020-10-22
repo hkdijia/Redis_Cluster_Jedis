@@ -1,6 +1,7 @@
 package com.gotkx.redissdemo.cluster;
 
 import org.redisson.Redisson;
+import org.redisson.api.RKeys;
 import org.redisson.api.RSet;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
@@ -18,10 +19,16 @@ public class SetExample {
                 //可以用"rediss://"来启用SSL连接
                 .addNodeAddress(NODEADDRESS_M1);
         RedissonClient client = Redisson.create(config);
-        RSet<String> set = client.getSet("rr:6JBMiO12RgaXo-uO2xGWKw:default");
-        for (String s : set) {
-            System.out.println(s);
+
+        RKeys keys = client.getKeys();
+        Iterable<String> keysKeys = keys.getKeys();
+        for (String key : keysKeys) {
+            System.out.println(key);
         }
+//        RSet<String> set = client.getSet("rr:6JBMiO12RgaXo-uO2xGWKw:default");
+//        for (String s : set) {
+//            System.out.println(s);
+//        }
         //set.add(new String("www.baidu.com"));
         //set.add(new String("momomomo"));
         //set.clear();
