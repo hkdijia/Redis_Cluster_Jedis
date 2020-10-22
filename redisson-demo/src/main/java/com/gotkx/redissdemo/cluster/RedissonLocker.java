@@ -5,12 +5,7 @@ import org.redisson.api.RedissonClient;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author weidongge
- * @program wei-dev-utils
- * @description
- * @create 2019-09-19 17:07
- */
+
 public class RedissonLocker implements Locker {
 
     private RedissonClient redissonClient;

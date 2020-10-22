@@ -2,12 +2,7 @@ package com.gotkx.redissdemo.cluster;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author weidongge
- * @program wei-dev-utils
- * @description
- * @create 2019-09-19 17:10
- */
+
 public final class LockerUtil {
 
 
