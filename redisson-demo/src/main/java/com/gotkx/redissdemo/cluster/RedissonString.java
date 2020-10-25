@@ -1,7 +1,6 @@
 package com.gotkx.redissdemo.cluster;
 
 import org.redisson.Redisson;
-import org.redisson.api.RBucket;
 import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 
@@ -17,11 +16,17 @@ public class RedissonString {
                 .setScanInterval(2000)
                 .addNodeAddress(NODEADDRESS_M1);
         RedissonClient client = Redisson.create(config);
+        client.getBucket("hk").set("ggg");
+        //RBucket<Object> rBucket = client.getBucket("hk");
+        //rBucket.delete();
 
-        RBucket<String> rBucket = client.getBucket("hk");
-        rBucket.set("思密达");
-        String s = rBucket.get();
-        System.out.println("是啥呢：" +s);
+
+
+        //rBucket.set("思密达");
+        //System.out.println("是啥呢：" +rBucket.get());
+
+        //rBucket.clearExpire();
+
         client.shutdown();
     }
 

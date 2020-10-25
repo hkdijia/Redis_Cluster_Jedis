@@ -1,16 +1,15 @@
 package com.gotkx.redissdemo.cluster;
 
 import org.redisson.Redisson;
-import org.redisson.api.*;
+import org.redisson.api.RBucket;
+import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ClusterRedisson {
 
+    private static final String NODEADDRESS_M1 = "redis://192.168.50.21:6379";
+
     //private static  String  NODEADDRESS = "redis://192.168.50.21:6379";
-    private static final String  NODEADDRESS_M1 = "redis://10.254.13.20:6379";
     private static final String  NODEADDRESS_S1 = "redis://10.254.12.239:6380";
     private static final String  NODEADDRESS_M2 = "redis://10.254.13.30:6379";
     private static final String  NODEADDRESS_S2 = "redis://10.254.13.30:6380";

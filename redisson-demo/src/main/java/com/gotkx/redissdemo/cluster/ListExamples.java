@@ -11,7 +11,7 @@ import org.redisson.config.Config;
  */
 public class ListExamples {
 
-    private static final String  NODEADDRESS_M1 = "redis://10.254.13.20:6379";
+    private static final String NODEADDRESS_M1 = "redis://192.168.50.21:6379";
 
     public static void main(String[] args) {
         Config config = new Config();
@@ -27,12 +27,17 @@ public class ListExamples {
         nameList.add("smd");
         nameList.add("kualakualua");
         nameList.add("http://www.gotkx.com");
+
+        nameList.delete();
+
         //nameList.remove(-1);
 
-        boolean contains = nameList.contains("smd");
-        System.out.println("List size: " + nameList.size());
-        System.out.println("Is list contains name 'smd': " + contains);
-        nameList.forEach(System.out::println);
+//        boolean contains = nameList.contains("smd");
+//        System.out.println("List size: " + nameList.size());
+//        System.out.println("Is list contains name 'smd': " + contains);
+//        nameList.forEach(System.out::println);
+
+
         client.shutdown();
     }
 }

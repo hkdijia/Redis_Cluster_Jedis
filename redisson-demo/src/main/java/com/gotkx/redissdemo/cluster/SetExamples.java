@@ -19,8 +19,11 @@ public class SetExamples {
                 .setScanInterval(2000)
                 .addNodeAddress(NODEADDRESS_M1);
         RedissonClient client = Redisson.create(config);
-
         RSet<String> rSet = client.getSet("rr:0:admin");
+
+        rSet.clear();
+        rSet.delete();
+
         for (String s : rSet) {
             System.out.println(s);
         }
