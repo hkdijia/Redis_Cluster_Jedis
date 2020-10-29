@@ -23,6 +23,9 @@ public class MapExamples {
 
         // RMap 继承了 java.util.concurrent.ConcurrentMap 接口
         RMap<String, String> map = client.getMap("c2sso:c2SsoToken:eyJraWQiOiJNdzVoSHE3MVF3Szh3RkdIaFRuR0pnIiwidHlwIjoiSldUIiwiYWxnIjoiUlMyNTYifQ.eyJ1aWQiOiJhZG1pbiIsImFjIjoiYWRtaW4iLCJpc3MiOiJjMiIsInVuIjoi6LaF57qn566h55CG5ZGYIiwib3JnaW5zaWRzIjpbXSwib2lkIjpbXSwiZXhwIjoxNjA0MzA5MTIyLCJhaWQiOiIwIiwicm8iOlsiZGVmYXVsdCJdLCJpYXQiOjE2MDM3MDQzMjIsImNpZCI6W119.krz1x2E52gSVOWwFrI9Z6wU-SHGNUzvbUSUwWVWE28bxGEMQ6gFY1JDawWRfBQtJDejgobCcnX1HBiBscf5Uh4AYotohe_gt8nE4neeE_9Jr5Yxe4hwIXYMB-Po_MqNbQKSEU9HVKyWdr8_gd85q4NVs8GdjgzjwDUhNo0vI6jE");
+
+        long time = map.remainTimeToLive();
+
         for(Map.Entry<String, String> entity : map.entrySet()){
             System.out.println("键值对， key: " + entity.getKey() +" , value :" + entity.getValue());
         }

@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.concurrent.ExecutionException;
 
 public class RedissonScriptTest2 {
-    private static final String NODEADDRESS_M1 = "redis://10.254.9.205:6379";
+    private static final String NODEADDRESS_M1 = "redis://192.168.66.130:6379";
     private static String AIP_PERMISSION_VERIFY_SHA;
     private static final String AIP_PERMISSION_VERIFY_SCRIPT =
             new StringBuilder("return redis.call('get', 'KEYS[1]') ").toString();
@@ -52,15 +52,19 @@ public class RedissonScriptTest2 {
 //                true
 //        );
 
-        Object async = redisson.getScript().evalSha(
+//        Object async = redisson.getScript().evalSha(
+//                RScript.Mode.READ_ONLY,
+//                AIP_PERMISSION_VERIFY_SHA,
+//                RScript.ReturnType.VALUE,
+//                Lists.newArrayList("foosmd")
+//        );
+
+        Object eval = redisson.getScript().eval(
                 RScript.Mode.READ_ONLY,
-                AIP_PERMISSION_VERIFY_SHA,
-                RScript.ReturnType.VALUE,
-                Lists.newArrayList("foosmd")
-        );
+                AIP_PERMISSION_VERIFY_SCRIPT,
+                RScript.ReturnType.STATUS,
+                Lists.newArrayList("foosmd"));
 
-
-        System.out.println("打印取得的值：" + async);
         redisson.shutdown();
     }
 
